@@ -1,7 +1,12 @@
 export default function HeroSection() {
   return (
-    <section className="bg-[#EEF2FF] px-6 py-16">
+    <section className="bg-[#EEF2FF] px-6 pt-6 pb-16">
       <div className="max-w-5xl mx-auto">
+
+        {/* Logo */}
+        <div className="flex justify-center" style={{height: "120px", overflow: "hidden"}}>
+          <img src="/logo_dsat-removebg-preview.png" alt="DSATGuru" className="w-auto object-contain block" style={{height: "220px", marginTop: "-50px"}} />
+        </div>
 
         {/* Star rating pill — centered */}
         <div className="flex justify-center mb-6">
