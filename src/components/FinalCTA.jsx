@@ -13,9 +13,38 @@ const COUNTRIES = [
 export default function FinalCTA() {
   const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
   const [selectedCountry, setSelectedCountry] = useState(COUNTRIES[0]);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+
+    try {
+      const response = await fetch('http://localhost:5000/api/submissions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...form,
+          countryCode: selectedCountry.code
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.message || "Something went wrong. Please try again.");
+        return;
+      }
+
+      setSubmitted(true);
+      document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' });
+    } catch (err) {
+      setError("Unable to connect to server. Please try again later.");
+    }
+  };
 
   useEffect(() => {
     const handler = (e) => { if (dropdownRef.current && !dropdownRef.current.contains(e.target)) setDropdownOpen(false); };
@@ -32,14 +61,20 @@ export default function FinalCTA() {
           <p className="text-blue-200">Join 2,000+ students — one webinar can change your SAT score forever.</p>
         </div>
 
+        {error && (
+          <div className="mb-6 bg-red-500/10 border border-red-500/20 text-red-200 px-4 py-3 rounded-xl text-center text-sm">
+            ⚠️ {error}
+          </div>
+        )}
+
         {submitted ? (
-          <div className="bg-blue-600 text-white rounded-2xl p-10 text-center">
-            <div className="text-5xl mb-4">🎉</div>
-            <h3 className="text-2xl font-bold mb-2">You're Registered!</h3>
-            <p className="text-blue-100">Check your email for the Zoom link and your free bonuses. See you at the webinar!</p>
+          <div className="bg-green-600 text-white rounded-2xl p-10 text-center shadow-2xl">
+            <div className="text-5xl mb-4">✅</div>
+            <h3 className="text-2xl font-bold mb-2">Registration Successful!</h3>
+            <p className="text-green-100">Your seat has been reserved. Check your email for free masterclass link.</p>
           </div>
         ) : (
-          <form onSubmit={e => { e.preventDefault(); setSubmitted(true); }} className="bg-white rounded-2xl p-8 shadow-2xl flex flex-col gap-4">
+          <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-2xl flex flex-col gap-4">
             <div className="grid grid-cols-2 gap-4">
               <input
                 required type="text" placeholder="First Name"

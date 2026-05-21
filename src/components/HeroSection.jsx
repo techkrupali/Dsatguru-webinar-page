@@ -25,7 +25,7 @@ export default function HeroSection() {
             with the
           </h1>
           <h2 className="text-4xl md:text-5xl font-extrabold text-blue-600 underline decoration-blue-400 mb-4">
-            DSAT Elite Score Boost Bootcamp™
+            DSAT Elite Score Summercamp™
           </h2>
           <p className="text-xl md:text-2xl font-semibold text-gray-600 italic">
             ...The Intensive Weekend Program Designed to{" "}
