@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
 
 const Admin = require('./models/Admin');
 const Submission = require('./models/Submission');
@@ -17,6 +18,17 @@ app.use(cors());
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB: dsatform'))
   .catch(err => console.error('MongoDB connection error:', err));
+
+// Email Transporter
+const transporter = nodemailer.createTransport({
+  host: process.env.EMAIL_HOST,
+  port: process.env.EMAIL_PORT,
+  secure: process.env.EMAIL_PORT == 465, // true for 465, false for other ports
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
 
 // Middleware to verify JWT
 const verifyToken = (req, res, next) => {
@@ -83,8 +95,50 @@ app.post('/api/submissions', async (req, res) => {
       firstName, lastName, email: email.toLowerCase(), phone, countryCode
     });
     await newSubmission.save();
+
+    // Fetch webinar settings for email
+    const settings = await Settings.findOne() || { zoomLink: 'To be announced', webinarDate: 'TBA', webinarTime: 'TBA' };
+
+    // Send confirmation email
+    const mailOptions = {
+      from: process.env.EMAIL_FROM,
+      to: email,
+      subject: 'Registration Successful - DSATGuru Webinar',
+      html: `
+        <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 10px;">
+          <h2 style="color: #2563eb; text-align: center;">Registration Confirmed! 🎉</h2>
+          <p>Hi ${firstName},</p>
+          <p>Thank you for registering for the <strong>DSAT Elite Score Summercamp™</strong>. Your seat is now reserved.</p>
+          
+          <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="margin-top: 0; color: #1e293b;">Masterclass Details:</h3>
+            <p><strong>📅 Date:</strong> ${settings.webinarDate}</p>
+            <p><strong>🕒 Time:</strong> ${settings.webinarTime}</p>
+            <p><strong>🔗 Zoom Link:</strong> <a href="${settings.zoomLink}" style="color: #2563eb;">Join Webinar Here</a></p>
+          </div>
+
+          <p>Please make sure to join 5 minutes early. We recommend attending from a laptop for the best experience.</p>
+          
+          <p style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; font-size: 0.9em; color: #64748b;">
+            See you at the webinar!<br>
+            <strong>Team DSATGuru</strong>
+          </p>
+        </div>
+      `,
+    };
+
+    // We don't want to block the response if email fails, but we should log it
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error('Error sending email:', error);
+      } else {
+        console.log('Email sent:', info.response);
+      }
+    });
+
     res.json({ message: 'Submission successful' });
   } catch (err) {
+    console.error('Submission error:', err);
     res.status(500).json({ message: 'Error saving submission' });
   }
 });
