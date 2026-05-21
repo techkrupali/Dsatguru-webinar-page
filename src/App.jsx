@@ -19,6 +19,7 @@ import LoginPage from './admin/LoginPage';
 import AdminLayout from './admin/AdminLayout';
 import Dashboard from './admin/Dashboard';
 import FormsPage from './admin/FormsPage';
+import LinksPage from './admin/LinksPage';
 
 const MainSite = () => (
   <>
@@ -52,6 +53,7 @@ export default function App() {
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="forms" element={<FormsPage />} />
+            <Route path="links" element={<LinksPage />} />
           </Route>
         </Route>
 

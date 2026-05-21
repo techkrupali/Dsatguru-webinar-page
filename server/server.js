@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken');
 
 const Admin = require('./models/Admin');
 const Submission = require('./models/Submission');
+const Settings = require('./models/Settings');
 
 const app = express();
 app.use(express.json());
@@ -19,8 +20,13 @@ mongoose.connect(process.env.MONGODB_URI)
 
 // Middleware to verify JWT
 const verifyToken = (req, res, next) => {
-  const token = req.headers['authorization'];
+  let token = req.headers['authorization'];
   if (!token) return res.status(403).json({ message: 'No token provided' });
+
+  // Handle Bearer prefix if present
+  if (token.startsWith('Bearer ')) {
+    token = token.slice(7, token.length);
+  }
 
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
     if (err) return res.status(401).json({ message: 'Failed to authenticate token' });
@@ -107,5 +113,44 @@ app.get('/api/admin/stats', verifyToken, async (req, res) => {
   }
 });
 
+// --- SETTINGS ROUTES ---
+
+// Get Settings
+app.get('/api/admin/settings', verifyToken, async (req, res) => {
+  console.log('GET /api/admin/settings hit');
+  try {
+    let settings = await Settings.findOne();
+    if (!settings) {
+      settings = new Settings({ zoomLink: '', webinarDate: '', webinarTime: '' });
+      await settings.save();
+    }
+    res.json(settings);
+  } catch (err) {
+    res.status(500).json({ message: 'Error fetching settings' });
+  }
+});
+
+// Update Settings
+app.post('/api/admin/settings', verifyToken, async (req, res) => {
+  const { zoomLink, webinarDate, webinarTime } = req.body;
+  try {
+    let settings = await Settings.findOne();
+    if (!settings) {
+      settings = new Settings({ zoomLink, webinarDate, webinarTime });
+    } else {
+      settings.zoomLink = zoomLink;
+      settings.webinarDate = webinarDate;
+      settings.webinarTime = webinarTime;
+    }
+    await settings.save();
+    res.json(settings);
+  } catch (err) {
+    res.status(500).json({ message: 'Error updating settings' });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  console.log('Settings routes are active');
+});
