@@ -29,9 +29,7 @@ const instructors = [
     name: "Dr. Bala",
     role: "Reading and Writing SPECIALIST",
     education: [
-      "B.Sc.",
-      "M.Sc.",
-      "B.Ed.",
+      "PhD",
     ],
     experience: "10+ Years of Teaching Experience",
     bio: "Experienced English educator dedicated to helping students master the SAT Reading and Writing sections with clarity and confidence.",
@@ -57,7 +55,7 @@ export default function WhyUsSection() {
               {education.length > 0 && (
                 <p className="text-sm mb-3">
                   <span className="font-extrabold text-blue-600 tracking-wide">EDUCATION</span>
-                  <span className="font-semibold text-gray-700"> (B.Sc. , M.Sc.  &  B.Ed.)</span>
+                  <span className="font-semibold text-gray-700"> ({education.join(' , ')})</span>
                 </p>
               )}
               {experience && <p className="text-sm text-green-600 font-semibold mb-3">🏆 {experience}</p>}

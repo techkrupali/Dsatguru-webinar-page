@@ -39,19 +39,14 @@ export default function HeroSection() {
           {/* LEFT — Video embed */}
           <div className="flex-1 w-full rounded-2xl overflow-hidden shadow-xl border border-gray-200 bg-black">
             <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-              <img
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=700&q=80"
-                alt="Bootcamp preview"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              {/* Play button overlay */}
-              <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                <div className="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center shadow-lg cursor-pointer hover:bg-red-700 transition">
-                  <svg className="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/ixTvazJFjVA?autoplay=1&mute=1&loop=1&playlist=ixTvazJFjVA"
+                title="DSAT Elite Score Boost Bootcamp™ — Preview"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
               {/* Video label */}
               <div className="absolute bottom-3 left-3 bg-black/60 text-white text-xs px-3 py-1 rounded-full">
                 🎓 DSAT Elite Score Boost Bootcamp™ — Preview
