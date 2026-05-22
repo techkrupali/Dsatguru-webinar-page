@@ -13,7 +13,7 @@ export default function HeroSection() {
           <div className="inline-flex items-center gap-2 border border-gray-300 rounded-full px-5 py-2 bg-white shadow-sm text-sm font-semibold text-gray-700">
             <span className="text-yellow-400 tracking-tight">★★★★★</span>
             <span className="text-gray-400">|</span>
-            4.9 STAR RATINGS | 2,000+ STUDENTS
+            4.9 STAR RATINGS | 150+ STUDENTS
           </div>
         </div>
 
@@ -21,11 +21,11 @@ export default function HeroSection() {
         <div className="text-center mb-4">
           <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
             Go From{" "}
-            <span className="text-blue-600 underline decoration-blue-400">1120 → 1500+</span>{" "}
-            with the
+            <span className="text-blue-600 underline decoration-blue-400">LOW SCORE → 1500+</span>{" "}
+            with
           </h1>
           <h2 className="text-4xl md:text-5xl font-extrabold text-blue-600 underline decoration-blue-400 mb-4">
-            DSAT Elite Score Summercamp™
+            DSAT Intensive Summercamp™
           </h2>
           <p className="text-xl md:text-2xl font-semibold text-gray-600 italic">
             ...The Intensive Weekend Program Designed to{" "}
@@ -71,7 +71,7 @@ export default function HeroSection() {
               </div>
               <div>
                 <span className="font-bold text-gray-900 text-base underline">Date &amp; Time:</span>
-                <span className="text-gray-700 text-base"> May 21, 2026 (4:00 PM IST | 10:30 AM GMT)</span>
+                <span className="text-gray-700 text-base"> May 29, 2026 ( 7pm EST Friday )</span>
               </div>
             </div>
 
