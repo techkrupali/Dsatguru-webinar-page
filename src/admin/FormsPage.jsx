@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import API_BASE_URL from '../apiConfig';
 
 const FormsPage = () => {
   const [submissions, setSubmissions] = useState([]);
@@ -6,7 +7,7 @@ const FormsPage = () => {
   useEffect(() => {
     const fetchSubmissions = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/admin/submissions', {
+        const response = await fetch(`${API_BASE_URL}/api/admin/submissions`, {
           headers: {
             'Authorization': localStorage.getItem('admin_token')
           }

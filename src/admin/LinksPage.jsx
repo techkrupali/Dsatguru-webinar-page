@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import API_BASE_URL from '../apiConfig';
 
 const LinksPage = () => {
   const [zoomLink, setZoomLink] = useState('');
@@ -11,7 +12,7 @@ const LinksPage = () => {
   useEffect(() => {
     const fetchSettings = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/admin/settings', {
+        const response = await fetch(`${API_BASE_URL}/api/admin/settings`, {
           headers: {
             'Authorization': localStorage.getItem('admin_token')
           }
@@ -38,7 +39,7 @@ const LinksPage = () => {
     setMessage({ type: '', text: '' });
 
     try {
-      const response = await fetch('http://localhost:5000/api/admin/settings', {
+      const response = await fetch(`${API_BASE_URL}/api/admin/settings`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

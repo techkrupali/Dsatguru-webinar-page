@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import API_BASE_URL from '../apiConfig';
 
 const Dashboard = () => {
   const [stats, setStats] = useState({ totalSubmissions: 0, todaySubmissions: 0 });
@@ -6,7 +7,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/admin/stats', {
+        const response = await fetch(`${API_BASE_URL}/api/admin/stats`, {
           headers: {
             'Authorization': localStorage.getItem('admin_token')
           }

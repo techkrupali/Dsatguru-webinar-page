@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import API_BASE_URL from "../apiConfig";
 
 const COUNTRIES = [
   { code: "+91", flag: "🇮🇳" },
@@ -23,7 +24,7 @@ export default function FinalCTA() {
     setError("");
 
     try {
-      const response = await fetch('http://localhost:5000/api/submissions', {
+      const response = await fetch(`${API_BASE_URL}/api/submissions`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
