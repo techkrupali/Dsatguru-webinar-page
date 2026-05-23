@@ -35,6 +35,17 @@ const instructors = [
     bio: "Experienced English educator dedicated to helping students master the SAT Reading and Writing sections with clarity and confidence.",
     photo: "/bala mam.png",
   },
+  {
+    name: "Malya Rastogi",
+    role: "VERBAL ABILITY SPECIALIST",
+    education: [
+      "Masters in Public Policy",
+      "Bachelors in Public Policy",
+    ],
+    experience: "8+ Years of Teaching Experience",
+    bio: "Expert in Verbal Ability and Public Policy, dedicated to helping students master the nuances of English and critical thinking for the Digital SAT.",
+    photo: "/Malya Rastogi.jpeg",
+  },
 ];
 
 export default function WhyUsSection() {
@@ -46,7 +57,7 @@ export default function WhyUsSection() {
           <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Meet Your Instructors</h2>
           <p className="text-gray-500">Learn from experts who have been in your shoes and cracked the code.</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {instructors.map(({ name, role, education, experience, bio, photo }) => (
             <div key={name} className="max-w-sm w-full border-2 border-gray-200 rounded-xl p-4">
               <img src={photo} alt={name} className="w-full h-80 object-cover object-top rounded-lg mb-5 border-2 border-gray-200" />
