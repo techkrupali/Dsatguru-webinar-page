@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
 
 const results = [
-  { video: "/v1.mp4", score: "980 → 1350", title: "How I Improved 550+ Points in 1 Months", university: "Stanford University", quote: '"The structured approach and mock tests made all the difference!"' },
-  { video: "/v2.mp4", score: "1120 → 1450", title: "From Confused to Confident in SAT Math", university: "MIT", quote: '"The Desmos calculator strategies were game-changing!"' },
-  { video: "/v3.mp4", score: "1210 → 1510", title: "The Strategies That Helped Me Save Time", university: "Harvard University", quote: '"I learned how to work smarter, not harder!"' },
-  { video: "/v4.mp4", score: "1050 → 1380", title: "From Average to Top Percentile in 6 Weeks", university: "UC Berkeley", quote: '"The live classes kept me accountable and on track."' },
-  { video: "/v5.mp4", score: "1150 → 1420", title: "How I Mastered the Digital SAT in 4 Weeks", university: "Columbia University", quote: '"The Strategy Planner helped me focus on what really mattered."' },
+  { video: "/v1.mp4", score: "1220 → 1550", title: "How I Improved 430+ Points in 7 weeks", university: "UNC CH", quote: '"The structured approach and mock tests made all the difference!"' },
+  { video: "/v2.mp4", score: "1270 → 1540", title: "From Confused to Confident in SAT Math", university: "GEORGIA TECH (GIT) (Expected)", quote: '"The Desmos calculator strategies were game-changing!"' },
+  { video: "/v3.mp4", score: "1210 → 1520", title: "The Strategies That Helped Me Save Time", university: "Duke U.", quote: '"I learned how to work smarter, not harder!"' },
+  { video: "/v4.mp4", score: "1050 → 1440", title: "I am Happy with my Score", university: "NC State", quote: '"The live classes kept me accountable and on track."' },
+  { video: "/v5.mp4", score: "1410 → 1560", title: "How I Mastered the Digital SAT in 10 Weeks", university: "Columbia University (Expected)", quote: '"The Strategy Planner helped me focus on what really mattered."' },
 ];
 
 function VideoCard({ video, score, title, university, quote }) {

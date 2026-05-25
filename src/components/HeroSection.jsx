@@ -25,11 +25,11 @@ export default function HeroSection() {
             with
           </h1>
           <h2 className="text-4xl md:text-5xl font-extrabold text-blue-600 underline decoration-blue-400 mb-4">
-            DSAT Intensive Summercamp™
+            DSAT Intensive DSAT SUMMER PREP™
           </h2>
           <p className="text-xl md:text-2xl font-semibold text-gray-600 italic">
-            ...The Intensive Weekend Program Designed to{" "}
-            <span className="underline">Maximize Your Score</span> Fast!
+            ...The Intensive Summer Program Designed to{" "}
+            <span className="underline">Maximize Your Score</span> Fast! Guaranteed!
           </p>
         </div>
 
@@ -98,10 +98,9 @@ export default function HeroSection() {
 
             {/* Highlight line */}
             <p className="text-base font-semibold text-gray-700 text-center">
-              👉 Learn{" "}
-              <span className="underline font-bold">Elite Strategies</span> &amp;{" "}
-              <span className="underline font-bold">"Score Boost Framework"</span>{" "}
-              that Transform Your SAT Score
+              👉 Stop guessing. Start scoring. Learn proven SAT strategies and our{" "}
+              <span className="underline font-bold">Score Boost Framework</span>{" "}
+              that transforms your results. Our students generally score 1500+.
             </p>
 
             {/* CTA Button */}
@@ -109,7 +108,7 @@ export default function HeroSection() {
               href="#register"
               className="block bg-blue-600 hover:bg-blue-700 text-white text-center font-extrabold text-xl px-6 py-4 rounded-xl shadow-lg shake-btn"
             >
-              Enroll Now For This Bootcamp
+              Enroll Now For This DSAT SUMMER PREP
               <span className="block text-sm font-normal text-blue-200 mt-0.5">
                 Today Only — Limited Seats Available
               </span>

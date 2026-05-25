@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 const faqs = [
-  { q: "Is this webinar really free?", a: "Yes, 100% free. No credit card required. Just register with your name and email." },
+  { q: "This Webinar is completely Free?", a: "Yes, 100% free. No credit card required. Just register with your name and email." },
   { q: "Who is this webinar for?", a: "Students planning to take the Digital SAT, whether you're a beginner or have already attempted it and want to improve your score." },
   { q: "Will I get the recording?", a: "Yes! All registered attendees receive the full recording within 24 hours of the live session." },
   { q: "What is the Digital SAT?", a: "The Digital SAT (DSAT) is the new computer-adaptive version of the SAT, accepted by 1,800+ US universities and many international institutions." },
-  { q: "How is DSATGuru different from other coaching?", a: "We focus exclusively on the Digital SAT with data-driven strategies, not generic SAT prep. Our students average a 250+ point improvement." },
+  { q: "Ready to reach your dream score?", a: "We focus exclusively on the Digital SAT, using smart, data-driven strategies built just for you—no generic prep here. Together, our students achieve, Generally 1500+. We can't wait to help you unlock your full potential!" },
   { q: "Can parents attend too?", a: "Absolutely! We encourage parents to join so they can support their child's preparation journey." },
 ];
 

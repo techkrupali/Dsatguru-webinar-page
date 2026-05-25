@@ -9,7 +9,7 @@ const instructors = [
       "M.Sc. (Mathematics) — L.P. University (2016)",
       "B.Ed. (Math & Science) — CRS University (2019)",
     ],
-    experience: "5+ Years of Teaching Experience",
+    experience: "8+ Years of Teaching Experience",
     bio: "Passionate Math educator with a strong academic foundation in Computer Science, Mathematics, and Education. Dedicated to making complex concepts simple and accessible for every student.",
     photo: "/vikassir.png",
   },

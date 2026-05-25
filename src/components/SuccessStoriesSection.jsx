@@ -88,7 +88,7 @@ export default function SuccessStoriesSection() {
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3">
                 <span className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold">✓</span>
-                <p className="text-gray-200 text-base">Master the Digital SAT Summer Camp — learn proven strategies to crack the adaptive format, boost your score, and get into your dream university.</p>
+                <p className="text-gray-200 text-base">Master the Digital SAT DSAT SUMMER PREP — learn proven strategies to crack the adaptive format, boost your score, and get into your dream university.</p>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold">✓</span>
