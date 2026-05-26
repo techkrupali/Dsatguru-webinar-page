@@ -25,11 +25,11 @@ export default function HeroSection() {
             with
           </h1>
           <h2 className="text-4xl md:text-5xl font-extrabold text-blue-600 underline decoration-blue-400 mb-4">
-            DSAT Intensive Summercamp™
+            DSAT Intensive DSAT SUMMER PREP™
           </h2>
           <p className="text-xl md:text-2xl font-semibold text-gray-600 italic">
-            ...The Intensive Weekend Program Designed to{" "}
-            <span className="underline">Maximize Your Score</span> Fast!
+            ...The Intensive Summer Program Designed to{" "}
+            <span className="underline">Maximize Your Score</span> Fast! Guaranteed!
           </p>
         </div>
 
@@ -39,19 +39,14 @@ export default function HeroSection() {
           {/* LEFT — Video embed */}
           <div className="flex-1 w-full rounded-2xl overflow-hidden shadow-xl border border-gray-200 bg-black">
             <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-              <img
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=700&q=80"
-                alt="Bootcamp preview"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              {/* Play button overlay */}
-              <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                <div className="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center shadow-lg cursor-pointer hover:bg-red-700 transition">
-                  <svg className="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/ixTvazJFjVA?autoplay=1&mute=1&loop=1&playlist=ixTvazJFjVA"
+                title="DSAT Elite Score Boost Bootcamp™ — Preview"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
               {/* Video label */}
               <div className="absolute bottom-3 left-3 bg-black/60 text-white text-xs px-3 py-1 rounded-full">
                 🎓 DSAT Elite Score Boost Bootcamp™ — Preview
@@ -103,10 +98,9 @@ export default function HeroSection() {
 
             {/* Highlight line */}
             <p className="text-base font-semibold text-gray-700 text-center">
-              👉 Learn{" "}
-              <span className="underline font-bold">Elite Strategies</span> &amp;{" "}
-              <span className="underline font-bold">"Score Boost Framework"</span>{" "}
-              that Transform Your SAT Score
+              👉 Stop guessing. Start scoring. Learn proven SAT strategies and our{" "}
+              <span className="underline font-bold">Score Boost Framework</span>{" "}
+              that transforms your results. Our students generally score 1500+.
             </p>
 
             {/* CTA Button */}
@@ -114,7 +108,7 @@ export default function HeroSection() {
               href="#register"
               className="block bg-blue-600 hover:bg-blue-700 text-white text-center font-extrabold text-xl px-6 py-4 rounded-xl shadow-lg shake-btn"
             >
-              Enroll Now For This Bootcamp
+              Enroll Now For This DSAT SUMMER PREP
               <span className="block text-sm font-normal text-blue-200 mt-0.5">
                 Today Only — Limited Seats Available
               </span>

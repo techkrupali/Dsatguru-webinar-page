@@ -25,11 +25,11 @@ export default function PainPointSection() {
           ))}
         </div>
         <div className="mt-10 flex flex-col items-center gap-4">
-          <p className="text-gray-700 text-lg font-semibold text-center">If you've ever thought this way, this Summer Camp is for you 👇</p>
+          <p className="text-gray-700 text-lg font-semibold text-center">If you've ever thought this way, this DSAT SUMMER PREP is for you 👇</p>
           <button
             onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
             className="shake-btn bg-blue-600 hover:bg-blue-700 transition-colors rounded-2xl py-4 px-12 text-center shadow-lg">
-            <p className="text-white text-lg font-bold">Enroll Now For This Bootcamp</p>
+            <p className="text-white text-lg font-bold">Enroll Now For This DSAT SUMMER PREP</p>
             <p className="text-blue-100 text-sm mt-1">Today Only — Limited Seats Available</p>
           </button>
         </div>

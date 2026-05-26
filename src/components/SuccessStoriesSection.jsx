@@ -73,7 +73,7 @@ export default function SuccessStoriesSection() {
         <div className="mt-16 bg-gradient-to-br from-[#0F1F5C] to-[#1a3a8f] rounded-3xl overflow-hidden flex flex-col md:flex-row">
           <div className="md:w-2/5 relative overflow-hidden">
             <img
-              src="/rahulsir.png"
+              src="/rahulshah.jpeg"
               alt="Instructor"
               className="w-full h-full object-cover object-top min-h-[500px] scale-110 origin-top"
             />
@@ -88,7 +88,7 @@ export default function SuccessStoriesSection() {
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3">
                 <span className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold">✓</span>
-                <p className="text-gray-200 text-base">Master the Digital SAT Summer Camp — learn proven strategies to crack the adaptive format, boost your score, and get into your dream university.</p>
+                <p className="text-gray-200 text-base">Master the Digital SAT DSAT SUMMER PREP — learn proven strategies to crack the adaptive format, boost your score, and get into your dream university.</p>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold">✓</span>

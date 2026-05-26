@@ -108,7 +108,7 @@ app.post('/api/submissions', async (req, res) => {
         <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 10px;">
           <h2 style="color: #2563eb; text-align: center;">Registration Confirmed! 🎉</h2>
           <p>Hi ${firstName},</p>
-          <p>Thank you for registering for the <strong>DSAT Elite Score Summercamp™</strong>. Your seat is now reserved.</p>
+          <p>Thank you for registering for the <strong>DSAT Elite Score DSAT SUMMER PREP™</strong>. Your seat is now reserved.</p>
           
           <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="margin-top: 0; color: #1e293b;">Masterclass Details:</h3>

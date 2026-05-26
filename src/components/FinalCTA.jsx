@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from "react";
+import API_BASE_URL from "../apiConfig";
 
 const COUNTRIES = [
-  { code: "+91", flag: "🇮🇳" },
   { code: "+1",  flag: "🇺🇸" },
+  { code: "+91", flag: "🇮🇳" },
   { code: "+44", flag: "🇬🇧" },
   { code: "+61", flag: "🇦🇺" },
   { code: "+971",flag: "🇦🇪" },
@@ -23,7 +24,7 @@ export default function FinalCTA() {
     setError("");
 
     try {
-      const response = await fetch('http://localhost:5000/api/submissions', {
+      const response = await fetch(`${API_BASE_URL}/api/submissions`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -57,7 +58,7 @@ export default function FinalCTA() {
       <div className="max-w-xl mx-auto">
         <div className="text-center mb-10">
           <span className="inline-block bg-blue-500/20 text-blue-300 text-sm font-semibold px-5 py-1.5 rounded-full mb-4">Register Now</span>
-          <h2 className="text-4xl font-extrabold text-white mb-3">🎯 Claim Your FREE Seat Now!</h2>
+          <h2 className="text-4xl font-extrabold text-white mb-3">🎯 LIMITED SEATS…SAVE YOUR SPOT NOW!</h2>
           <p className="text-blue-200">Join 2,000+ students — one webinar can change your SAT score forever.</p>
         </div>
 
@@ -124,7 +125,7 @@ export default function FinalCTA() {
               />
             </div>
             <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl text-lg transition">
-              Reserve My Free Seat →
+              Reserve your free Seat
             </button>
             <p className="text-center text-gray-400 text-xs">🔒 Your information is safe. No spam, ever.</p>
           </form>

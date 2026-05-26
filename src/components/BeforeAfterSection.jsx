@@ -11,13 +11,13 @@ const beforePoints = [
 
 const afterPoints = [
   "Fully understand the Digital SAT adaptive format and scoring system",
-  "Clear 12-hour intensive roadmap with our Strategy Planner",
+  "Clear 60-hour intensive roadmap with our Strategy Planner",
   "Master time management with proven speed techniques",
   "Custom Exam Set Builder creates targeted practice for your weak areas",
-  "Score 1400+ with structured SAT Summer Camp strategies",
-  "Know exactly which topics give maximum score boost",
+  "Score 1500+ achievable with structured SAT DSAT SUMMER PREP strategies",
+  "Get Structured Drill Questions to cover your Low Score Zone",
   "Access 25+ realistic mock tests simulating real DSAT conditions",
-  "Walk into exam day confident, prepared, and ready to excel",
+  "Walk into exam day confident, prepared, and ready to excel...like…I have Got This…",
 ];
 
 export default function BeforeAfterSection() {
