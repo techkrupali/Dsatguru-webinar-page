@@ -15,7 +15,7 @@ export default function FeaturesSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <span className="inline-block bg-blue-100 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full mb-4">The Solution</span>
-          <h2 className="text-4xl font-extrabold text-white mb-4">Our DSAT SUMMER PREP SAT Program Changes That</h2>
+          <h2 className="text-4xl font-extrabold text-white mb-4">Our Master Class Changes That</h2>
           <p className="text-blue-100 max-w-2xl mx-auto">Our comprehensive toolkit is designed to optimize your study time and maximize your results through structured SAT prep strategies and data-driven performance insights.</p>
         </div>
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 grid sm:grid-cols-2 gap-4">

@@ -3,6 +3,7 @@ import "./index.css";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import PainPointSection from "./components/PainPointSection";
+import PerfectForSection from "./components/PerfectForSection";
 import WhyUsSection from "./components/WhyUsSection";
 import StudentResults from "./components/StudentResults";
 import FeaturesSection from "./components/FeaturesSection";
@@ -27,6 +28,7 @@ const MainSite = () => (
     <HeroSection />
     <StudentResults />
     <PainPointSection />
+    <PerfectForSection />
     <FeaturesSection />
     <SuccessStoriesSection />
     <BeforeAfterSection />
