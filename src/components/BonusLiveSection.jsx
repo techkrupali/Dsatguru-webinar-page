@@ -1,0 +1,56 @@
+const bonuses = [
+  { icon: "🎁", text: "SAT Preparation Checklist" },
+  { icon: "🎁", text: "College Application Planning Guide" },
+  { icon: "🎁", text: "Live Q&A Access" },
+];
+
+export default function BonusLiveSection() {
+  return (
+    <section className="bg-[#EEF2FF] py-20 px-6">
+      <div className="max-w-4xl mx-auto">
+
+        {/* Header */}
+        <div className="text-center mb-10">
+          <span className="inline-block bg-blue-100 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full mb-4">Exclusive Bonuses</span>
+          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Bonus for Live Attendees</h2>
+          <p className="text-gray-500 text-base">Everyone who attends live will receive:</p>
+        </div>
+
+        {/* Bonus cards */}
+        <div className="grid sm:grid-cols-3 gap-4 mb-10">
+          {bonuses.map(({ icon, text }) => (
+            <div key={text} className="bg-white rounded-2xl border border-blue-100 shadow-sm p-6 flex flex-col items-center text-center gap-3">
+              <span className="text-4xl">{icon}</span>
+              <p className="text-gray-800 font-semibold text-base">{text}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Important notice */}
+        <div className="bg-white rounded-2xl border border-blue-200 shadow-sm p-7 mb-8">
+          <p className="text-blue-600 font-extrabold text-lg mb-3">⚠️ Important</p>
+          <p className="text-gray-700 text-sm leading-relaxed mb-2">
+            This training is best for students planning to take the SAT within the next 12 months.
+          </p>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            If you're serious about improving your SAT score and preparing for college admissions, make sure to reserve your seat today.
+          </p>
+          <div className="mt-4 inline-block bg-red-50 border border-red-200 text-red-600 font-bold text-sm px-4 py-2 rounded-xl">
+            🔴 Seats Are Limited
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="flex justify-center">
+          <button
+            onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
+            className="shake-btn bg-blue-600 hover:bg-blue-700 transition-colors rounded-2xl py-4 px-12 text-center shadow-lg">
+            <p className="text-white text-xl font-extrabold">YES! SAVE MY FREE SEAT</p>
+            <p className="text-blue-200 text-sm mt-1">Limited Seats — Register Before They're Gone</p>
+          </button>
+        </div>
+
+      </div>
+    </section>
+  );
+}

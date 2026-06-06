@@ -5,6 +5,7 @@ import HeroSection from "./components/HeroSection";
 import PainPointSection from "./components/PainPointSection";
 import PerfectForSection from "./components/PerfectForSection";
 import WhyUsSection from "./components/WhyUsSection";
+import BonusLiveSection from "./components/BonusLiveSection";
 import StudentResults from "./components/StudentResults";
 import FeaturesSection from "./components/FeaturesSection";
 import SuccessStoriesSection from "./components/SuccessStoriesSection";
@@ -33,6 +34,7 @@ const MainSite = () => (
     <SuccessStoriesSection />
     <BeforeAfterSection />
     <WhyUsSection />
+    <BonusLiveSection />
     <ParentTrust />
     <UrgencySection />
     <FAQSection />

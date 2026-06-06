@@ -1,44 +1,68 @@
-const points = [
-  { icon: "⚡", text: "60+ hours of intensive instruction over the summer" },
-  { icon: "🎯", text: "Strategic approach to all DSAT sections" },
-  { icon: "🧠", text: "Intensive boot camp training with expert instructors" },
-  { icon: "📈", text: "All Key concepts and test-taking techniques Revision" },
-  { icon: "✨", text: "25+ realistic full-length practice tests" },
-  { icon: "✅", text: "Take-home materials and practice tests" },
-  { icon: "⚡", text: "Guaranteed Score Increase" },
-  { icon: "🎯", text: "Full summer access to online practice tests and boot camp video resources" },
+const attendees = [
+  "High school students preparing for the SAT",
+  "Students aiming for competitive colleges",
+  "Students who want to improve their SAT score",
+  "Parents who want to support their child's college journey",
 ];
 
 export default function FeaturesSection() {
   return (
-    <section className="bg-gradient-to-br from-[#0F1F5C] to-[#1a3a8f] py-16 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-[#EEF2FF] py-20 px-6">
+      <div className="max-w-5xl mx-auto">
+
+        {/* Header */}
         <div className="text-center mb-12">
-          <span className="inline-block bg-blue-100 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full mb-4">The Solution</span>
-          <h2 className="text-4xl font-extrabold text-white mb-4">Our Master Class Changes That</h2>
-          <p className="text-blue-100 max-w-2xl mx-auto">Our comprehensive toolkit is designed to optimize your study time and maximize your results through structured SAT prep strategies and data-driven performance insights.</p>
+          <span className="inline-block bg-blue-100 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full mb-4">Free Training</span>
+          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Why Attend?</h2>
         </div>
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 grid sm:grid-cols-2 gap-4">
-          <div className="sm:col-span-2 mb-2">
-            <h3 className="text-xl font-bold text-gray-900">Designed to Help Students:</h3>
-          </div>
-          {points.map(({ icon, text }) => (
-            <div key={text} className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-2xl">
-                {icon}
-              </div>
-              <p className="text-gray-700 text-base mt-3">{text}</p>
+
+        {/* Two column layout */}
+        <div className="flex flex-col lg:flex-row gap-6 items-stretch">
+
+          {/* LEFT — Who Should Attend */}
+          <div className="flex-1 bg-white rounded-2xl border border-blue-100 shadow-sm p-7">
+            <h3 className="text-xl font-extrabold text-gray-900 mb-5">Who Should Attend?</h3>
+            <div className="flex flex-col gap-3">
+              {attendees.map((text) => (
+                <div key={text} className="flex items-center gap-3 bg-[#EEF2FF] rounded-xl px-4 py-3 border border-blue-100">
+                  <span className="text-green-500 text-lg flex-shrink-0">✅</span>
+                  <p className="text-gray-800 text-sm font-medium">{text}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* RIGHT — Why Attend */}
+          <div className="flex-1 bg-white rounded-2xl border border-blue-100 shadow-sm p-7 flex flex-col justify-center">
+            <h3 className="text-xl font-extrabold text-gray-900 mb-4">Why This Training?</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              The SAT can have a major impact on your college opportunities. But most students waste time using random study methods, outdated advice, and confusing strategies.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mt-3">
+              This training will help you understand what actually matters so you can move forward with confidence.
+            </p>
+            <div className="mt-5 flex flex-col gap-2">
+              {["Clarity on what the SAT actually tests", "A proven framework used by top scorers", "Actionable steps you can apply immediately"].map((pt) => (
+                <div key={pt} className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-blue-600 flex-shrink-0" />
+                  <p className="text-gray-700 text-sm">{pt}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
+
+        {/* CTA */}
         <div className="mt-10 flex justify-center">
           <button
             onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
-            className="shake-btn bg-blue-500 hover:bg-blue-400 transition-colors rounded-2xl py-4 px-12 text-center shadow-lg">
-            <p className="text-white text-lg font-bold">Enroll Now For This DSAT SUMMER PREP</p>
-            <p className="text-blue-100 text-sm mt-1">Today Only — Limited Seats Available</p>
+            className="shake-btn bg-blue-600 hover:bg-blue-700 transition-colors rounded-2xl py-4 px-12 text-center shadow-lg">
+            <p className="text-white text-lg font-bold">Reserve My Free Spot Now</p>
+            <p className="text-blue-200 text-sm mt-1">Limited Seats — Register Before They're Gone</p>
           </button>
         </div>
+
       </div>
     </section>
   );
