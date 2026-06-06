@@ -1,23 +1,23 @@
 const beforePoints = [
-  "Confused about the new Digital SAT adaptive format",
-  "Scoring below 1200 despite months of self-study",
-  "Running out of time during Math and Reading sections",
-  "No structured study plan — studying randomly without direction",
-  "Wasting money on expensive coaching with no score improvement",
-  "Don't know which topics to prioritise for maximum score gain",
-  "Overwhelmed by the sheer volume of practice material available",
-  "No idea how to use the Desmos calculator strategically",
+  "I don't know where to start.",
+  "I've been studying but my score isn't improving.",
+  "There is too much SAT advice online.",
+  "What score do I actually need?",
+  "Am I preparing the right way?",
+  "What if I don't get into the college I want?",
+  "I'm stressed about SATs and college applications.",
+  "I feel lost and overwhelmed.",
 ];
 
 const afterPoints = [
-  "Fully understand the Digital SAT adaptive format and scoring system",
-  "Clear 60-hour intensive roadmap with our Strategy Planner",
-  "Master time management with proven speed techniques",
-  "Custom Exam Set Builder creates targeted practice for your weak areas",
-  "Score 1500+ achievable with structured SAT DSAT SUMMER PREP strategies",
-  "Get Structured Drill Questions to cover your Low Score Zone",
-  "Access 25+ realistic mock tests simulating real DSAT conditions",
-  "Walk into exam day confident, prepared, and ready to excel...like…I have Got This…",
+  "Clear on exactly what to focus on next",
+  "Understand the SAT preparation roadmap",
+  "Know the biggest mistakes to avoid",
+  "Have a smarter study strategy",
+  "Understand what colleges care about",
+  "Feel confident about your college admissions journey",
+  "Know how to improve your chances of success",
+  "Have a clear action plan moving forward",
 ];
 
 export default function BeforeAfterSection() {
@@ -29,7 +29,7 @@ export default function BeforeAfterSection() {
           {/* Before Column */}
           <div className="bg-gray-900 rounded-2xl overflow-hidden">
             <div className="bg-red-600 py-4 px-6 text-center">
-              <h3 className="text-xl font-bold text-white">Before The Free Masterclass</h3>
+              <h3 className="text-xl font-bold text-white">BEFORE THE FREE TRAINING</h3>
             </div>
             <div className="p-6">
               <div className="rounded-xl overflow-hidden mb-6">
@@ -53,7 +53,7 @@ export default function BeforeAfterSection() {
           {/* After Column */}
           <div className="bg-gray-900 rounded-2xl overflow-hidden">
             <div className="bg-green-600 py-4 px-6 text-center">
-              <h3 className="text-xl font-bold text-white">After The Free Masterclass</h3>
+              <h3 className="text-xl font-bold text-white">AFTER THE FREE TRAINING</h3>
             </div>
             <div className="p-6">
               <div className="rounded-xl overflow-hidden mb-6">
