@@ -78,7 +78,7 @@ export default function SuccessStoriesSection() {
               className="w-full h-full object-cover object-top min-h-[500px] scale-110 origin-top"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-center py-3">
-              <p className="font-bold text-lg">Dr. Rahul Shah &nbsp;|&nbsp; <span className="text-gray-300 tracking-widest text-sm font-normal">FOUNDER</span></p>
+              <p className="font-bold text-lg">Dr. Rahul Shah &nbsp;|&nbsp; <span className="text-gray-300 tracking-widest text-sm font-normal">Coach</span></p>
             </div>
           </div>
           <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
