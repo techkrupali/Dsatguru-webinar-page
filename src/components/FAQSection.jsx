@@ -16,14 +16,14 @@ export default function FAQSection() {
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <span className="inline-block bg-blue-100 text-blue-600 text-sm font-semibold px-5 py-1.5 rounded-full mb-4">FAQ</span>
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">Frequently Asked Questions</h2>
           <p className="text-gray-500">Got questions? We've got answers.</p>
         </div>
         <div className="flex flex-col gap-3">
           {faqs.map(({ q, a }, i) => (
             <div key={q} className="bg-white rounded-2xl border border-blue-100 overflow-hidden shadow-sm">
               <button
-                className="w-full text-left px-6 py-4 flex justify-between items-center font-semibold text-gray-900"
+                className="w-full text-left px-4 sm:px-6 py-4 flex justify-between items-center font-semibold text-gray-900 text-sm sm:text-base"
                 onClick={() => setOpen(open === i ? null : i)}
               >
                 {q}

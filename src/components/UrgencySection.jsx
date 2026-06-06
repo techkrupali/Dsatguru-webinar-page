@@ -3,7 +3,7 @@ export default function UrgencySection() {
     <section className="py-16 px-6 bg-[#0F1F5C]">
       <div className="max-w-3xl mx-auto text-center">
         <span className="inline-block bg-blue-500/20 text-blue-300 text-sm font-semibold px-5 py-1.5 rounded-full mb-5">⚠️ Limited Seats Available</span>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 whitespace-nowrap">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 break-words">
           Only <span className="text-blue-300">Spots</span> Remaining — Don't Miss Out!
         </h2>
         <p className="text-blue-200 mb-8">

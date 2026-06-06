@@ -40,7 +40,7 @@ const stats = [
 export default function StatsBar() {
   return (
     <section className="bg-[#F1F4FB] py-10 px-6">
-      <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8">
         {stats.map(({ value, label, icon }) => (
           <div key={label} className="flex flex-col items-center text-center gap-3">
             <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center">

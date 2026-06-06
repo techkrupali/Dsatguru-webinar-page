@@ -19,12 +19,12 @@ export default function HeroSection() {
 
         {/* Big centered headline */}
         <div className="text-center mb-4">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
             How Students Are Scoring{" "}
             <span className="text-blue-600 underline decoration-blue-400">1450+</span>{" "}
             On The Digital SAT Without Studying 4-5 Hours Daily
           </h1>
-          <p className="text-sm md:text-base font-semibold text-gray-700">
+          <p className="text-xs sm:text-sm md:text-base font-semibold text-gray-700">
             Learn The Exact Digital SAT Preparation Framework That Has Helped Students Get Into Top Universities In The USA
           </p>
         </div>

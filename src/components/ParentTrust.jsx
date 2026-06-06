@@ -11,7 +11,7 @@ export default function ParentTrust() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <span className="inline-block bg-blue-100 text-blue-600 text-sm font-semibold px-5 py-1.5 rounded-full mb-4">For Parents</span>
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">A Note for Parents</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">A Note for Parents</h2>
           <p className="text-gray-500">We understand your concerns. Here's why thousands of parents trust us.</p>
         </div>
         <div className="grid md:grid-cols-2 gap-5">

@@ -60,14 +60,14 @@ export default function StudentResults() {
           <span className="inline-block bg-blue-100 text-blue-600 text-sm font-semibold px-5 py-1.5 rounded-full mb-5">
             Student Success
           </span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
             Real Student Results & Experiences
           </h2>
           <p className="text-gray-500 text-base max-w-xl mx-auto leading-relaxed">
             Hear Directly From Students Who Improved Their SAT Scores & Got Closer to Their Dream Universities
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {results.map((r) => (
             <VideoCard key={r.video} {...r} />
           ))}

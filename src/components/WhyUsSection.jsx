@@ -54,12 +54,12 @@ export default function WhyUsSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <span className="inline-block bg-blue-100 text-blue-600 text-sm font-semibold px-5 py-1.5 rounded-full mb-4">Expert Instructors</span>
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Meet Your Instructors</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">Meet Your Instructors</h2>
           <p className="text-gray-500">Learn from experts who have been in your shoes and cracked the code.</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {instructors.map(({ name, role, education, experience, bio, photo }) => (
-            <div key={name} className="max-w-sm w-full border-2 border-gray-200 rounded-xl p-4">
+            <div key={name} className="w-full border-2 border-gray-200 rounded-xl p-4">
               <img src={photo} alt={name} className="w-full h-80 object-cover object-top rounded-lg mb-5 border-2 border-gray-200" />
               <h3 className="text-2xl font-bold text-gray-900 mb-1">{name}</h3>
               <p className="text-gray-600 text-sm font-semibold mb-3">{role}</p>

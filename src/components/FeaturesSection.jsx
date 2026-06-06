@@ -13,7 +13,7 @@ export default function FeaturesSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <span className="inline-block bg-blue-100 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full mb-4">Free Training</span>
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Why Attend?</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">Why Attend?</h2>
         </div>
 
         {/* Two column layout */}
@@ -57,7 +57,7 @@ export default function FeaturesSection() {
         <div className="mt-10 flex justify-center">
           <button
             onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
-            className="shake-btn bg-blue-600 hover:bg-blue-700 transition-colors rounded-2xl py-4 px-12 text-center shadow-lg">
+            className="shake-btn bg-blue-600 hover:bg-blue-700 transition-colors rounded-2xl py-4 px-8 sm:px-12 text-center shadow-lg w-full sm:w-auto">
             <p className="text-white text-lg font-bold">Reserve My Free Spot Now</p>
             <p className="text-blue-200 text-sm mt-1">Limited Seats — Register Before They're Gone</p>
           </button>

@@ -12,12 +12,12 @@ export default function BonusLiveSection() {
         {/* Header */}
         <div className="text-center mb-10">
           <span className="inline-block bg-blue-100 text-blue-600 text-sm font-semibold px-5 py-2 rounded-full mb-4">Exclusive Bonuses</span>
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Bonus for Live Attendees</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">Bonus for Live Attendees</h2>
           <p className="text-gray-500 text-base">Everyone who attends live will receive:</p>
         </div>
 
         {/* Bonus cards */}
-        <div className="grid sm:grid-cols-3 gap-4 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
           {bonuses.map(({ icon, text }) => (
             <div key={text} className="bg-white rounded-2xl border border-blue-100 shadow-sm p-6 flex flex-col items-center text-center gap-3">
               <span className="text-4xl">{icon}</span>
@@ -44,7 +44,7 @@ export default function BonusLiveSection() {
         <div className="flex justify-center">
           <button
             onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
-            className="shake-btn bg-blue-600 hover:bg-blue-700 transition-colors rounded-2xl py-4 px-12 text-center shadow-lg">
+            className="shake-btn bg-blue-600 hover:bg-blue-700 transition-colors rounded-2xl py-4 px-8 sm:px-12 text-center shadow-lg w-full sm:w-auto">
             <p className="text-white text-xl font-extrabold">YES! SAVE MY FREE SEAT</p>
             <p className="text-blue-200 text-sm mt-1">Limited Seats — Register Before They're Gone</p>
           </button>

@@ -58,7 +58,7 @@ export default function FinalCTA() {
       <div className="max-w-xl mx-auto">
         <div className="text-center mb-10">
           <span className="inline-block bg-blue-500/20 text-blue-300 text-sm font-semibold px-5 py-1.5 rounded-full mb-4">Register Now</span>
-          <h2 className="text-4xl font-extrabold text-white mb-3">🎯 LIMITED SEATS…SAVE YOUR SPOT NOW!</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3">🎯 LIMITED SEATS…SAVE YOUR SPOT NOW!</h2>
           <p className="text-blue-200">Join 2,000+ students — one webinar can change your SAT score forever.</p>
         </div>
 
@@ -75,7 +75,7 @@ export default function FinalCTA() {
             <p className="text-green-100">Your seat has been reserved. Check your email for free masterclass link.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-2xl flex flex-col gap-4">
+          <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-5 sm:p-8 shadow-2xl flex flex-col gap-4">
             <div className="grid grid-cols-2 gap-4">
               <input
                 required type="text" placeholder="First Name"
