@@ -1,10 +1,10 @@
 const pains = [
-  { icon: "😰", text: "Confused about the new Digital SAT format and adaptive testing?" },
-  { icon: "💸", text: "Spending lakhs on coaching but not seeing score improvements?" },
-  { icon: "⏰", text: "Running out of time during the exam and losing easy marks?" },
-  { icon: "📉", text: "Scoring below 1200 despite months of preparation?" },
-  { icon: "😓", text: "Don't know which topics to prioritise for maximum score gain?" },
-  { icon: "🤯", text: "Overwhelmed by the sheer volume of practice material available?" },
+  { icon: "😰", text: "Not sure how to prepare effectively for the Digital SAT" },
+  { icon: "📉", text: "Studying hard but not seeing the score improvement you expected" },
+  { icon: "🤯", text: "Feeling overwhelmed by too much information online" },
+  { icon: "🎯", text: "Unsure what score you actually need for your dream university" },
+  { icon: "🏫", text: "Confused about university admissions and scholarship opportunities" },
+  { icon: "😓", text: "Worried about making costly mistakes during your preparation journey" },
 ];
 
 export default function PainPointSection() {
@@ -13,7 +13,7 @@ export default function PainPointSection() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <span className="inline-block bg-blue-100 text-blue-600 text-sm font-semibold px-5 py-1.5 rounded-full mb-4">Common Struggles</span>
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Does This Sound Like You?</h2>
+          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Are You Facing Any Of These Challenges?</h2>
           <p className="text-gray-500">You're not alone. Thousands of students face these exact challenges.</p>
         </div>
         <div className="grid md:grid-cols-2 gap-4">
@@ -25,7 +25,8 @@ export default function PainPointSection() {
           ))}
         </div>
         <div className="mt-10 flex flex-col items-center gap-4">
-          <p className="text-gray-700 text-lg font-semibold text-center">If you've ever thought this way, this DSAT SUMMER PREP is for you 👇</p>
+          <p className="text-gray-700 text-lg font-semibold text-center">If you answered YES to any of these...</p>
+          <p className="text-gray-900 text-xl font-bold text-center">This training was designed specifically for you.</p>
           <button
             onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
             className="shake-btn bg-blue-600 hover:bg-blue-700 transition-colors rounded-2xl py-4 px-12 text-center shadow-lg">
