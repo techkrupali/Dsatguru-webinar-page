@@ -94,9 +94,7 @@ export default function HeroSection() {
 
             {/* Highlight line */}
             <p className="text-base font-semibold text-gray-700 text-center">
-              👉 Stop guessing. Start scoring. Learn proven SAT strategies and our{" "}
-              <span className="underline font-bold">Score Boost Framework</span>{" "}
-              that transforms your results. Our students generally score 1500+.
+              👉 Discover the simple SAT roadmap high-performing students use to improve their scores, avoid common mistakes, and build stronger college applications.
             </p>
 
             {/* CTA Button */}
@@ -104,15 +102,15 @@ export default function HeroSection() {
               href="#register"
               className="block bg-blue-600 hover:bg-blue-700 text-white text-center font-extrabold text-xl px-6 py-4 rounded-xl shadow-lg shake-btn"
             >
-              Enroll Now For This DSAT SUMMER PREP
+              SAVE MY FREE SEAT
               <span className="block text-sm font-normal text-blue-200 mt-0.5">
-                Today Only — Limited Seats Available
+                Free Registration • Limited Spots Available
               </span>
             </a>
 
             {/* Bonus line */}
             <p className="text-center text-gray-500 text-sm">
-              Get the Free Bonuses worth $2000 when you Register TODAY
+              Get the Free Bonuses worth $200 when you Register TODAY
             </p>
             <p className="text-center text-red-500 text-sm font-bold">
               🔴 FREE Registrations Ending on <span className="text-red-500">May 21, 2026</span>
