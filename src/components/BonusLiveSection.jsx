@@ -1,7 +1,7 @@
 const bonuses = [
-  { icon: "🎁", text: "SAT Preparation Checklist" },
-  { icon: "🎁", text: "College Application Planning Guide" },
-  { icon: "🎁", text: "Live Q&A Access" },
+  { icon: "📋", text: "SAT Preparation Checklist" },
+  { icon: "🗺️", text: "College Application Planning Guide" },
+  { icon: "🎤", text: "Live Q&A Access" },
 ];
 
 export default function BonusLiveSection() {

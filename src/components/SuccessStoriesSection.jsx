@@ -88,15 +88,15 @@ export default function SuccessStoriesSection() {
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3">
                 <span className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold">✓</span>
-                <p className="text-gray-200 text-base">Master the Digital SAT DSAT SUMMER PREP — learn proven strategies to crack the adaptive format, boost your score, and get into your dream university.</p>
+                <p className="text-gray-200 text-base">Coach-led DSAT blueprint — learn the exact approach our team teaches (8+ years Math, 10+ years Reading &amp; Writing, 20+ years Verbal) to master the adaptive format.</p>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold">✓</span>
-                <p className="text-gray-200 text-base">Use our exclusive <strong className="text-white">Strategy Planner</strong> — a personalised roadmap that identifies your weak areas and builds a targeted study plan for maximum score gain.</p>
+                <p className="text-gray-200 text-base">Real student results &amp; case studies — see what worked for our learners (4.9★ ratings) and how they used the same framework to improve performance and confidence.</p>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold">✓</span>
-                <p className="text-gray-200 text-base">Access our <strong className="text-white">Exam Set Builder</strong> — create custom practice sets that simulate real DSAT conditions, so you walk into exam day fully prepared and confident.</p>
+                <p className="text-gray-200 text-base">Get your roadmap + resources — walk away with a clear weekly plan, plus how to use our <strong className="text-white">Strategy Planner</strong> and <strong className="text-white">Exam Set Builder</strong> to practice like the real DSAT.</p>
               </li>
             </ul>
             <button
