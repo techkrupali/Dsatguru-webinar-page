@@ -23,6 +23,18 @@ export default function FinalCTA() {
     e.preventDefault();
     setError("");
 
+    const phoneDigits = form.phone.replace(/\D/g, "");
+    if (phoneDigits) {
+      if (phoneDigits.length < 7 || phoneDigits.length > 15) {
+        setError("Please enter a valid mobile number.");
+        return;
+      }
+      if (selectedCountry.code === "+91" && phoneDigits.length !== 10) {
+        setError("Please enter a valid 10-digit mobile number.");
+        return;
+      }
+    }
+
     try {
       const response = await fetch(`${API_BASE_URL}/api/submissions`, {
         method: 'POST',
@@ -119,8 +131,9 @@ export default function FinalCTA() {
                 </div>
               )}
               <input
-                required type="tel" placeholder="WhatsApp Number"
-                value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })}
+                type="tel" inputMode="numeric" placeholder="WhatsApp Number (optional)"
+                value={form.phone}
+                onChange={e => setForm({ ...form, phone: e.target.value.replace(/\D/g, "") })}
                 className="flex-1 px-4 py-3 text-sm focus:outline-none rounded-r-xl"
               />
             </div>

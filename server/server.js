@@ -169,6 +169,24 @@ app.get('/api/admin/stats', verifyToken, async (req, res) => {
 
 // --- SETTINGS ROUTES ---
 
+// Get Settings (PUBLIC - for the website to show webinar link/date/time)
+app.get('/api/settings', async (req, res) => {
+  try {
+    let settings = await Settings.findOne();
+    if (!settings) {
+      settings = new Settings({ zoomLink: '', webinarDate: '', webinarTime: '' });
+      await settings.save();
+    }
+    res.json({
+      zoomLink: settings.zoomLink,
+      webinarDate: settings.webinarDate,
+      webinarTime: settings.webinarTime,
+    });
+  } catch (err) {
+    res.status(500).json({ message: 'Error fetching settings' });
+  }
+});
+
 // Get Settings
 app.get('/api/admin/settings', verifyToken, async (req, res) => {
   console.log('GET /api/admin/settings hit');

@@ -1,4 +1,41 @@
+import { useState, useEffect } from "react";
+import API_BASE_URL from "../apiConfig";
+
+const FALLBACK_DATETIME = "June 12, 2026 ( 7pm EST Friday )";
+
+function formatDateTime(webinarDate, webinarTime) {
+  if (!webinarDate) return FALLBACK_DATETIME;
+
+  // webinarDate is "YYYY-MM-DD" — parse manually to avoid timezone shifts
+  const [year, month, day] = webinarDate.split("-").map(Number);
+  const dateObj = new Date(year, month - 1, day);
+  const monthName = dateObj.toLocaleDateString("en-US", { month: "long" });
+  const weekday = dateObj.toLocaleDateString("en-US", { weekday: "long" });
+  const datePart = `${monthName} ${day}, ${year}`;
+
+  if (!webinarTime) return `${datePart} ( ${weekday} )`;
+
+  // webinarTime is "HH:MM" (24h) — format to "7pm" / "7:30am"
+  const [h, m] = webinarTime.split(":").map(Number);
+  const ampm = h >= 12 ? "pm" : "am";
+  const hour12 = h % 12 === 0 ? 12 : h % 12;
+  const timePart = m ? `${hour12}:${String(m).padStart(2, "0")}${ampm}` : `${hour12}${ampm}`;
+
+  return `${datePart} ( ${timePart} EST ${weekday} )`;
+}
+
 export default function HeroSection() {
+  const [dateTime, setDateTime] = useState(FALLBACK_DATETIME);
+
+  useEffect(() => {
+    fetch(`${API_BASE_URL}/api/settings`)
+      .then((res) => res.json())
+      .then((data) => {
+        setDateTime(formatDateTime(data.webinarDate, data.webinarTime));
+      })
+      .catch(() => {});
+  }, []);
+
   return (
     <section className="bg-[#EEF2FF] px-6 pt-6 pb-16">
       <div className="max-w-5xl mx-auto">
@@ -62,7 +99,7 @@ export default function HeroSection() {
               </div>
               <div>
                 <span className="font-bold text-gray-900 text-base underline">Date &amp; Time:</span>
-                <span className="text-gray-700 text-base"> June 12, 2026 ( 7pm EST Friday )</span>
+                <span className="text-gray-700 text-base"> {dateTime}</span>
               </div>
             </div>
 
