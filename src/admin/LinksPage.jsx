@@ -4,6 +4,7 @@ import API_BASE_URL from '../apiConfig';
 const LinksPage = () => {
   const [zoomLink, setZoomLink] = useState('');
   const [whatsappLink, setWhatsappLink] = useState('');
+  const [thankYouVideo, setThankYouVideo] = useState('');
   const [webinarDate, setWebinarDate] = useState('');
   const [webinarTime, setWebinarTime] = useState('');
   const [loading, setLoading] = useState(true);
@@ -22,6 +23,7 @@ const LinksPage = () => {
           const data = await response.json();
           setZoomLink(data.zoomLink || '');
           setWhatsappLink(data.whatsappLink || '');
+          setThankYouVideo(data.thankYouVideo || '');
           setWebinarDate(data.webinarDate || '');
           setWebinarTime(data.webinarTime || '');
         }
@@ -47,7 +49,7 @@ const LinksPage = () => {
           'Content-Type': 'application/json',
           'Authorization': localStorage.getItem('admin_token')
         },
-        body: JSON.stringify({ zoomLink, whatsappLink, webinarDate, webinarTime }),
+        body: JSON.stringify({ zoomLink, whatsappLink, thankYouVideo, webinarDate, webinarTime }),
       });
 
       if (response.ok) {
@@ -101,6 +103,18 @@ const LinksPage = () => {
             onChange={(e) => setWhatsappLink(e.target.value)}
           />
           <p className="text-xs text-gray-400 mt-1">Shown as the "Join Our WhatsApp Group" button on the thank-you page.</p>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">Thank-You Page Video Link</label>
+          <input
+            type="url"
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+            placeholder="https://www.youtube.com/watch?v=... or .mp4 link"
+            value={thankYouVideo}
+            onChange={(e) => setThankYouVideo(e.target.value)}
+          />
+          <p className="text-xs text-gray-400 mt-1">YouTube link (watch/share/embed) or a direct video file. Shown on the thank-you page.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

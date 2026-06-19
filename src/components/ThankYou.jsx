@@ -25,10 +25,49 @@ function formatTime(webinarTime) {
   return `${hour12}:${String(m).padStart(2, "0")} ${ampm} EST`;
 }
 
+// Default video used when the admin hasn't set one yet
+const DEFAULT_VIDEO = "https://www.youtube.com/watch?v=ixTvazJFjVA";
+
+// Pull the YouTube video id out of watch / youtu.be / embed / shorts URLs
+function youtubeId(url) {
+  const patterns = [
+    /youtu\.be\/([\w-]{11})/,
+    /youtube\.com\/watch\?v=([\w-]{11})/,
+    /youtube\.com\/embed\/([\w-]{11})/,
+    /youtube\.com\/shorts\/([\w-]{11})/,
+  ];
+  for (const re of patterns) {
+    const match = url.match(re);
+    if (match) return match[1];
+  }
+  return null;
+}
+
+// Decide how to render whatever link the admin pasted
+function resolveVideo(url) {
+  const link = (url || "").trim() || DEFAULT_VIDEO;
+
+  const ytId = youtubeId(link);
+  if (ytId) {
+    return {
+      type: "iframe",
+      src: `https://www.youtube.com/embed/${ytId}?autoplay=1&mute=1&loop=1&playlist=${ytId}`,
+    };
+  }
+
+  if (/\.(mp4|webm|ogg|mov)(\?.*)?$/i.test(link)) {
+    return { type: "video", src: link };
+  }
+
+  // Some other embeddable URL — drop it straight into an iframe
+  return { type: "iframe", src: link };
+}
+
 export default function ThankYou() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [whatsappLink, setWhatsappLink] = useState("");
+  const [video, setVideo] = useState(() => resolveVideo(""));
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -38,6 +77,7 @@ export default function ThankYou() {
         setDate(formatDate(data.webinarDate));
         setTime(formatTime(data.webinarTime));
         setWhatsappLink(data.whatsappLink || "");
+        setVideo(resolveVideo(data.thankYouVideo));
       })
       .catch(() => {});
   }, []);
@@ -52,7 +92,7 @@ export default function ThankYou() {
             src="/logo_dsat-removebg-preview.png"
             alt="DSATGuru"
             className="w-auto object-contain block"
-            style={{ height: "170px", marginTop: "-40px" }}
+            style={{ height: "170px", marginTop: "-40px", filter: "brightness(0) invert(1)" }}
           />
         </div>
 
@@ -96,14 +136,26 @@ export default function ThankYou() {
           {/* Video */}
           <div className="flex-1 rounded-2xl overflow-hidden shadow-xl border border-white/10 bg-black">
             <div className="relative w-full h-full" style={{ paddingBottom: "56.25%" }}>
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/ixTvazJFjVA?autoplay=1&mute=1&loop=1&playlist=ixTvazJFjVA"
-                title="DSAT Elite Score Boost Bootcamp™"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+              {video.type === "video" ? (
+                <video
+                  className="absolute inset-0 w-full h-full object-cover"
+                  src={video.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                />
+              ) : (
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src={video.src}
+                  title="DSAT Elite Score Boost Bootcamp™"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              )}
             </div>
           </div>
 

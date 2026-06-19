@@ -180,6 +180,7 @@ app.get('/api/settings', async (req, res) => {
     res.json({
       zoomLink: settings.zoomLink,
       whatsappLink: settings.whatsappLink,
+      thankYouVideo: settings.thankYouVideo,
       webinarDate: settings.webinarDate,
       webinarTime: settings.webinarTime,
     });
@@ -205,14 +206,15 @@ app.get('/api/admin/settings', verifyToken, async (req, res) => {
 
 // Update Settings
 app.post('/api/admin/settings', verifyToken, async (req, res) => {
-  const { zoomLink, whatsappLink, webinarDate, webinarTime } = req.body;
+  const { zoomLink, whatsappLink, thankYouVideo, webinarDate, webinarTime } = req.body;
   try {
     let settings = await Settings.findOne();
     if (!settings) {
-      settings = new Settings({ zoomLink, whatsappLink, webinarDate, webinarTime });
+      settings = new Settings({ zoomLink, whatsappLink, thankYouVideo, webinarDate, webinarTime });
     } else {
       settings.zoomLink = zoomLink;
       settings.whatsappLink = whatsappLink;
+      settings.thankYouVideo = thankYouVideo;
       settings.webinarDate = webinarDate;
       settings.webinarTime = webinarTime;
     }
