@@ -25,49 +25,17 @@ function formatTime(webinarTime) {
   return `${hour12}:${String(m).padStart(2, "0")} ${ampm} EST`;
 }
 
-// Default video used when the admin hasn't set one yet
-const DEFAULT_VIDEO = "https://www.youtube.com/watch?v=ixTvazJFjVA";
-
-// Pull the YouTube video id out of watch / youtu.be / embed / shorts URLs
-function youtubeId(url) {
-  const patterns = [
-    /youtu\.be\/([\w-]{11})/,
-    /youtube\.com\/watch\?v=([\w-]{11})/,
-    /youtube\.com\/embed\/([\w-]{11})/,
-    /youtube\.com\/shorts\/([\w-]{11})/,
-  ];
-  for (const re of patterns) {
-    const match = url.match(re);
-    if (match) return match[1];
-  }
-  return null;
-}
-
-// Decide how to render whatever link the admin pasted
-function resolveVideo(url) {
-  const link = (url || "").trim() || DEFAULT_VIDEO;
-
-  const ytId = youtubeId(link);
-  if (ytId) {
-    return {
-      type: "iframe",
-      src: `https://www.youtube.com/embed/${ytId}?autoplay=1&mute=1&loop=1&playlist=${ytId}`,
-    };
-  }
-
-  if (/\.(mp4|webm|ogg|mov)(\?.*)?$/i.test(link)) {
-    return { type: "video", src: link };
-  }
-
-  // Some other embeddable URL — drop it straight into an iframe
-  return { type: "iframe", src: link };
-}
+const HIGHLIGHTS = [
+  { icon: "🎯", text: "The exact framework students use to score 1450+" },
+  { icon: "🧠", text: "Smart prep — without studying 4–5 hours daily" },
+  { icon: "🏛️", text: "A clear roadmap into top US universities" },
+  { icon: "🎁", text: "Free bonuses worth $200 for attending live" },
+];
 
 export default function ThankYou() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [whatsappLink, setWhatsappLink] = useState("");
-  const [video, setVideo] = useState(() => resolveVideo(""));
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -77,7 +45,6 @@ export default function ThankYou() {
         setDate(formatDate(data.webinarDate));
         setTime(formatTime(data.webinarTime));
         setWhatsappLink(data.whatsappLink || "");
-        setVideo(resolveVideo(data.thankYouVideo));
       })
       .catch(() => {});
   }, []);
@@ -130,33 +97,41 @@ export default function ThankYou() {
           </a>
         </div>
 
-        {/* Video + details */}
+        {/* Template + details */}
         <div className="flex flex-col lg:flex-row gap-8 items-stretch">
 
-          {/* Video */}
-          <div className="flex-1 rounded-2xl overflow-hidden shadow-xl border border-white/10 bg-black">
-            <div className="relative w-full h-full" style={{ paddingBottom: "56.25%" }}>
-              {video.type === "video" ? (
-                <video
-                  className="absolute inset-0 w-full h-full object-cover"
-                  src={video.src}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  controls
-                />
-              ) : (
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src={video.src}
-                  title="DSAT Elite Score Boost Bootcamp™"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              )}
+          {/* DSAT Template card */}
+          <div className="flex-1 rounded-2xl overflow-hidden shadow-xl border border-blue-400/20 bg-gradient-to-br from-[#13235C] to-[#0A1530] p-8 flex flex-col">
+            <div className="flex items-center gap-2 mb-6">
+              <span className="text-yellow-400 text-lg tracking-tight">★★★★★</span>
+              <span className="text-blue-200 text-sm">4.9 • 150+ students</span>
             </div>
+
+            <p className="text-blue-200 text-sm font-semibold uppercase tracking-wide mb-1">You're registered for</p>
+            <h3 className="text-2xl sm:text-3xl font-extrabold leading-tight mb-6">
+              DSAT Elite Score Boost Bootcamp™
+            </h3>
+
+            {/* Score badge */}
+            <div className="flex items-center gap-4 mb-7">
+              <div className="w-24 h-24 rounded-2xl bg-blue-600/20 border border-blue-400/30 flex flex-col items-center justify-center flex-shrink-0">
+                <span className="text-3xl font-extrabold text-white leading-none">1450<span className="text-yellow-400">+</span></span>
+                <span className="text-[10px] text-blue-200 mt-1 uppercase tracking-wide">Target Score</span>
+              </div>
+              <p className="text-blue-100 text-sm">
+                Learn the proven Digital SAT system that's helping students get into top US universities.
+              </p>
+            </div>
+
+            {/* Highlights */}
+            <ul className="space-y-3 mt-auto">
+              {HIGHLIGHTS.map((h) => (
+                <li key={h.text} className="flex items-start gap-3">
+                  <span className="text-xl flex-shrink-0">{h.icon}</span>
+                  <span className="text-blue-100 text-sm">{h.text}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Details */}

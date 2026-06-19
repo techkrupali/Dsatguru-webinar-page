@@ -153,6 +153,17 @@ app.get('/api/admin/submissions', verifyToken, async (req, res) => {
   }
 });
 
+// Delete a Submission (Protected)
+app.delete('/api/admin/submissions/:id', verifyToken, async (req, res) => {
+  try {
+    const deleted = await Submission.findByIdAndDelete(req.params.id);
+    if (!deleted) return res.status(404).json({ message: 'Submission not found' });
+    res.json({ message: 'Submission deleted' });
+  } catch (err) {
+    res.status(500).json({ message: 'Error deleting submission' });
+  }
+});
+
 // Get Stats (Protected)
 app.get('/api/admin/stats', verifyToken, async (req, res) => {
   try {
@@ -180,7 +191,6 @@ app.get('/api/settings', async (req, res) => {
     res.json({
       zoomLink: settings.zoomLink,
       whatsappLink: settings.whatsappLink,
-      thankYouVideo: settings.thankYouVideo,
       webinarDate: settings.webinarDate,
       webinarTime: settings.webinarTime,
     });
@@ -206,15 +216,14 @@ app.get('/api/admin/settings', verifyToken, async (req, res) => {
 
 // Update Settings
 app.post('/api/admin/settings', verifyToken, async (req, res) => {
-  const { zoomLink, whatsappLink, thankYouVideo, webinarDate, webinarTime } = req.body;
+  const { zoomLink, whatsappLink, webinarDate, webinarTime } = req.body;
   try {
     let settings = await Settings.findOne();
     if (!settings) {
-      settings = new Settings({ zoomLink, whatsappLink, thankYouVideo, webinarDate, webinarTime });
+      settings = new Settings({ zoomLink, whatsappLink, webinarDate, webinarTime });
     } else {
       settings.zoomLink = zoomLink;
       settings.whatsappLink = whatsappLink;
-      settings.thankYouVideo = thankYouVideo;
       settings.webinarDate = webinarDate;
       settings.webinarTime = webinarTime;
     }
