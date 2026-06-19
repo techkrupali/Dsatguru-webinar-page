@@ -24,14 +24,24 @@ function formatDateTime(webinarDate, webinarTime) {
   return `${datePart} ( ${timePart} EST ${weekday} )`;
 }
 
+// "2026-06-26" -> "June 26, 2026"
+function formatDateOnly(webinarDate) {
+  if (!webinarDate) return "";
+  const [year, month, day] = webinarDate.split("-").map(Number);
+  const dateObj = new Date(year, month - 1, day);
+  return dateObj.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+}
+
 export default function HeroSection() {
   const [dateTime, setDateTime] = useState(FALLBACK_DATETIME);
+  const [endingDate, setEndingDate] = useState("");
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/api/settings`)
       .then((res) => res.json())
       .then((data) => {
         setDateTime(formatDateTime(data.webinarDate, data.webinarTime));
+        setEndingDate(formatDateOnly(data.webinarDate));
       })
       .catch(() => {});
   }, []);
@@ -150,7 +160,7 @@ export default function HeroSection() {
               Get the Free Bonuses worth $200 when you Register TODAY
             </p>
             <p className="text-center text-red-500 text-sm font-bold">
-              🔴 FREE Registrations Ending on <span className="text-red-500">May 21, 2026</span>
+              🔴 FREE Registrations Ending on <span className="text-red-500">{endingDate || "June 12, 2026"}</span>
             </p>
           </div>
 

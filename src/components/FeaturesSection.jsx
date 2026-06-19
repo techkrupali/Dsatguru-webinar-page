@@ -1,3 +1,5 @@
+import CTAButton from "./CTAButton";
+
 const attendees = [
   "High school students preparing for the SAT",
   "Students aiming for competitive colleges",
@@ -55,12 +57,7 @@ export default function FeaturesSection() {
 
         {/* CTA */}
         <div className="mt-10 flex justify-center">
-          <button
-            onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
-            className="shake-btn bg-blue-600 hover:bg-blue-700 transition-colors rounded-2xl py-4 px-8 sm:px-12 text-center shadow-lg w-full sm:w-auto">
-            <p className="text-white text-lg font-bold">Reserve My Free Spot Now</p>
-            <p className="text-blue-200 text-sm mt-1">Limited Seats — Register Before They're Gone</p>
-          </button>
+          <CTAButton className="w-full sm:w-[520px]" />
         </div>
 
       </div>

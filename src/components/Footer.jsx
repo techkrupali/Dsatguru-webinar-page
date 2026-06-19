@@ -1,13 +1,31 @@
 import { useEffect, useState } from "react";
+import API_BASE_URL from "../apiConfig";
+import CTAButton from "./CTAButton";
 
-const WEBINAR_DATE = new Date("2026-05-21T16:00:00+05:30");
+// Fallback if settings haven't loaded yet (EST = UTC-5)
+const FALLBACK_DATE = new Date("2026-06-26T19:00:00-05:00");
 
 export default function Footer() {
   const [time, setTime] = useState({ days: 0, hrs: 0, min: 0, sec: 0 });
+  const [target, setTarget] = useState(FALLBACK_DATE);
+
+  useEffect(() => {
+    fetch(`${API_BASE_URL}/api/settings`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.webinarDate) {
+          const webinarTime = data.webinarTime || "19:00";
+          // Webinar time is in EST (UTC-5)
+          const parsed = new Date(`${data.webinarDate}T${webinarTime}:00-05:00`);
+          if (!isNaN(parsed)) setTarget(parsed);
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     const tick = () => {
-      const diff = WEBINAR_DATE - new Date();
+      const diff = target - new Date();
       if (diff <= 0) return setTime({ days: 0, hrs: 0, min: 0, sec: 0 });
       setTime({
         days: Math.floor(diff / 86400000),
@@ -19,7 +37,7 @@ export default function Footer() {
     tick();
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
-  }, []);
+  }, [target]);
 
   const pad = (n) => String(n).padStart(2, "0");
 
@@ -59,13 +77,7 @@ export default function Footer() {
         </div>
 
         {/* CTA */}
-        <a
-          href="#register"
-          className="bg-blue-600 hover:bg-blue-700 transition text-white font-extrabold text-xs sm:text-sm px-3 sm:px-5 py-2 sm:py-3 rounded-xl text-center leading-tight"
-        >
-          Crack the Digital SAT
-          <span className="block text-xs font-normal text-blue-200">(Free Registration)</span>
-        </a>
+        <CTAButton />
 
       </div>
     </footer>

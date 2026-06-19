@@ -1,3 +1,5 @@
+import CTAButton from "./CTAButton";
+
 const pains = [
   { icon: "😰", text: "Not sure how to prepare effectively for the Digital SAT" },
   { icon: "📉", text: "Studying hard but not seeing the score improvement you expected" },
@@ -27,12 +29,7 @@ export default function PainPointSection() {
         <div className="mt-10 flex flex-col items-center gap-4">
           <p className="text-gray-700 text-base sm:text-lg font-semibold text-center">If you answered YES to any of these...</p>
           <p className="text-gray-900 text-lg sm:text-xl font-bold text-center">This training was designed specifically for you.</p>
-          <button
-            onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
-            className="shake-btn bg-blue-600 hover:bg-blue-700 transition-colors rounded-2xl py-4 px-8 sm:px-12 text-center shadow-lg w-full sm:w-auto">
-            <p className="text-white text-lg font-bold">Enroll Now For This DSAT SUMMER PREP</p>
-            <p className="text-blue-100 text-sm mt-1">Today Only — Limited Seats Available</p>
-          </button>
+          <CTAButton className="w-full sm:w-[520px]" />
         </div>
       </div>
     </section>

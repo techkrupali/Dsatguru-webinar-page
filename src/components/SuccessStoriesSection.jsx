@@ -1,3 +1,5 @@
+import CTAButton from "./CTAButton";
+
 const reviews = [
   { initials: "PR", bg: "bg-green-100", name: "Prescovia", location: "USA", date: "Feb 4, 2026", rating: 5, verified: true, review: "DSATGuru is an excellent study and exam preparation platform. It helped me sharpen my critical thinking skills and significantly improved my Digital SAT performance. The structured approach and practice material are top-notch." },
   { initials: "MJ", bg: "bg-green-100", name: "MJ", location: "USA", date: "Aug 6, 2025", rating: 5, verified: true, review: "I've been using DSATGuru for months now. The comprehensive DSAT prep coverage is outstanding. I've tried other traditional prep courses but DSATGuru's adaptive approach and Strategy Planner are far superior." },
@@ -99,12 +101,7 @@ export default function SuccessStoriesSection() {
                 <p className="text-gray-200 text-base">Get your roadmap + resources — walk away with a clear weekly plan, plus how to use our <strong className="text-white">Strategy Planner</strong> and <strong className="text-white">Exam Set Builder</strong> to practice like the real DSAT.</p>
               </li>
             </ul>
-            <button
-              onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full bg-white hover:bg-gray-100 transition-colors rounded-xl py-4 px-6 text-center font-extrabold text-gray-900 text-xl shadow-lg"
-            >
-              🚀 Register For The FREE Class ✨
-            </button>
+            <CTAButton className="w-full" />
           </div>
         </div>
       </div>

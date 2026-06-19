@@ -1,3 +1,5 @@
+import CTAButton from "./CTAButton";
+
 export default function UrgencySection() {
   return (
     <section className="py-16 px-6 bg-[#0F1F5C]">
@@ -14,9 +16,9 @@ export default function UrgencySection() {
             <span key={t} className="bg-white/10 border border-white/20 text-white text-sm rounded-full px-4 py-1.5">{t}</span>
           ))}
         </div>
-        <a href="#register" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-10 py-4 rounded-xl shadow-lg transition">
-          Claim your Free Spot Now
-        </a>
+        <div className="flex justify-center">
+          <CTAButton className="w-full sm:w-[520px]" />
+        </div>
       </div>
     </section>
   );

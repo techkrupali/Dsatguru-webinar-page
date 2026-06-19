@@ -130,8 +130,14 @@ export default function FinalCTA() {
                 className="flex-1 px-4 py-3 text-sm focus:outline-none rounded-r-xl"
               />
             </div>
-            <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl text-lg transition">
-              Reserve your free Seat
+            <button
+              type="submit"
+              className="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center font-extrabold text-xl px-6 py-4 rounded-xl shadow-lg shake-btn transition"
+            >
+              SAVE MY FREE SEAT
+              <span className="block text-sm font-normal text-blue-200 mt-0.5">
+                Free Registration • Limited Spots Available
+              </span>
             </button>
             <p className="text-center text-gray-400 text-xs">🔒 Your information is safe. No spam, ever.</p>
         </form>

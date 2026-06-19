@@ -1,3 +1,5 @@
+import CTAButton from "./CTAButton";
+
 const bonuses = [
   { icon: "📋", text: "SAT Preparation Checklist" },
   { icon: "🗺️", text: "College Application Planning Guide" },
@@ -42,12 +44,7 @@ export default function BonusLiveSection() {
         </div>
 
         <div className="flex justify-center">
-          <button
-            onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}
-            className="shake-btn bg-blue-600 hover:bg-blue-700 transition-colors rounded-2xl py-5 px-8 sm:px-14 text-center shadow-lg w-full sm:w-[520px]">
-            <p className="text-white text-xl font-extrabold">YES! SAVE MY FREE SEAT</p>
-            <p className="text-blue-200 text-sm mt-1">Limited Seats — Register Before They're Gone</p>
-          </button>
+          <CTAButton className="w-full sm:w-[520px]" />
         </div>
 
       </div>
