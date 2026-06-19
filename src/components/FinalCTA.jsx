@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import API_BASE_URL from "../apiConfig";
 
 const COUNTRIES = [
@@ -12,8 +13,8 @@ const COUNTRIES = [
 ];
 
 export default function FinalCTA() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "" });
-  const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [selectedCountry, setSelectedCountry] = useState(COUNTRIES[0]);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -52,8 +53,7 @@ export default function FinalCTA() {
         return;
       }
 
-      setSubmitted(true);
-      document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' });
+      navigate('/thank-you');
     } catch (err) {
       setError("Unable to connect to server. Please try again later.");
     }
@@ -80,14 +80,7 @@ export default function FinalCTA() {
           </div>
         )}
 
-        {submitted ? (
-          <div className="bg-green-600 text-white rounded-2xl p-10 text-center shadow-2xl">
-            <div className="text-5xl mb-4">✅</div>
-            <h3 className="text-2xl font-bold mb-2">Registration Successful!</h3>
-            <p className="text-green-100">Your seat has been reserved. Check your email for free masterclass link.</p>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-5 sm:p-8 shadow-2xl flex flex-col gap-4">
+        <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-5 sm:p-8 shadow-2xl flex flex-col gap-4">
             <div className="grid grid-cols-2 gap-4">
               <input
                 required type="text" placeholder="First Name"
@@ -141,8 +134,7 @@ export default function FinalCTA() {
               Reserve your free Seat
             </button>
             <p className="text-center text-gray-400 text-xs">🔒 Your information is safe. No spam, ever.</p>
-          </form>
-        )}
+        </form>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@ import API_BASE_URL from '../apiConfig';
 
 const LinksPage = () => {
   const [zoomLink, setZoomLink] = useState('');
+  const [whatsappLink, setWhatsappLink] = useState('');
   const [webinarDate, setWebinarDate] = useState('');
   const [webinarTime, setWebinarTime] = useState('');
   const [loading, setLoading] = useState(true);
@@ -20,6 +21,7 @@ const LinksPage = () => {
         if (response.ok) {
           const data = await response.json();
           setZoomLink(data.zoomLink || '');
+          setWhatsappLink(data.whatsappLink || '');
           setWebinarDate(data.webinarDate || '');
           setWebinarTime(data.webinarTime || '');
         }
@@ -45,7 +47,7 @@ const LinksPage = () => {
           'Content-Type': 'application/json',
           'Authorization': localStorage.getItem('admin_token')
         },
-        body: JSON.stringify({ zoomLink, webinarDate, webinarTime }),
+        body: JSON.stringify({ zoomLink, whatsappLink, webinarDate, webinarTime }),
       });
 
       if (response.ok) {
@@ -87,6 +89,18 @@ const LinksPage = () => {
             value={zoomLink}
             onChange={(e) => setZoomLink(e.target.value)}
           />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">WhatsApp Group Link</label>
+          <input
+            type="url"
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+            placeholder="https://chat.whatsapp.com/..."
+            value={whatsappLink}
+            onChange={(e) => setWhatsappLink(e.target.value)}
+          />
+          <p className="text-xs text-gray-400 mt-1">Shown as the "Join Our WhatsApp Group" button on the thank-you page.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

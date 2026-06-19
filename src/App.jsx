@@ -14,6 +14,7 @@ import ParentTrust from "./components/ParentTrust";
 import UrgencySection from "./components/UrgencySection";
 import FAQSection from "./components/FAQSection";
 import FinalCTA from "./components/FinalCTA";
+import ThankYou from "./components/ThankYou";
 
 // Admin Imports
 import ProtectedRoute from './admin/ProtectedRoute';
@@ -48,6 +49,7 @@ export default function App() {
       <Routes>
         {/* Main Website */}
         <Route path="/" element={<MainSite />} />
+        <Route path="/thank-you" element={<ThankYou />} />
 
         {/* Admin Routes */}
         <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
