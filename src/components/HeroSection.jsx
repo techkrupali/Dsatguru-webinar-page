@@ -67,12 +67,13 @@ export default function HeroSection() {
         {/* Big centered headline */}
         <div className="text-center mb-4">
           <h1 className="max-w-4xl mx-auto text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight mb-3">
-            How Students Are Scoring{" "}
-            <span className="text-blue-600 underline decoration-blue-400">1450+</span>{" "}
-            On The Digital SAT Without Studying 4-5 Hours Daily
+            Taking The SAT In The Next{" "}
+            <span className="text-blue-600 underline decoration-blue-400">3–12 Months?</span>
           </h1>
           <p className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg font-semibold text-gray-700 leading-relaxed">
-            Learn The Exact Digital SAT Preparation Framework That Has Helped Students Get Into Top Universities In The USA
+            Join This Free Live Webinar To Learn The Proven SAT Success Framework Helping Students Move From{" "}
+            <span className="text-blue-600 font-bold">1000–1400</span> To{" "}
+            <span className="text-blue-600 font-bold">1400–1500+</span> Scores And Reach Their Target SAT Score Faster
           </p>
         </div>
 
