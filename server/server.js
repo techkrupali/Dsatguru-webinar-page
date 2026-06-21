@@ -87,6 +87,11 @@ app.post('/api/admin/seed', async (req, res) => {
 app.post('/api/submissions', async (req, res) => {
   const { firstName, lastName, email, phone, countryCode } = req.body;
   try {
+    // Mobile number is required
+    if (!phone || !phone.replace(/\D/g, '')) {
+      return res.status(400).json({ message: 'Mobile number is required' });
+    }
+
     // Check if email already registered
     const existing = await Submission.findOne({ email: email.toLowerCase() });
     if (existing) return res.status(400).json({ message: 'Email already registered' });
